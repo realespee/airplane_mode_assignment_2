@@ -1,0 +1,27 @@
+{% block page_content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Me a Color</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #rectangle {
+            width: 600px;
+            height: 200px;
+            background-color: {{ color }};
+        }
+    </style>
+</head>
+<body>
+    <div id="rectangle"></div>
+</body>
+</html>
+{% endblock %}

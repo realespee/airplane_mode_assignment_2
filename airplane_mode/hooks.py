@@ -43,6 +43,11 @@ app_license = "MIT"
 # 	"Role": "home_page"
 # }
 
+website_route_rules = [
+    {"from_route": "/show-me", "to_route": "show_me"}
+]
+
+
 # Generators
 # ----------
 
@@ -116,13 +121,14 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Airplane Ticket": {
+         "before_save": "airplane_mode.airplane_mode.doctype.airplane_ticket.airplane_ticket.set_seat_number",
+        "before_submit": "airplane_mode.airplane_mode.doctype.airplane_ticket.airplane_ticket.before_submit",
+        "on_submit": "airplane_mode.airplane_mode.doctype.airplane_ticket.airplane_ticket.after_submit_status"
+    
+    }
+}
 
 # Scheduled Tasks
 # ---------------

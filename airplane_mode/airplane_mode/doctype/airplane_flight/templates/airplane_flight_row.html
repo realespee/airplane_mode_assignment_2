@@ -1,0 +1,13 @@
+
+<!-- this is a sample default list template -->
+
+<div class="py-8 row">
+	
+	<div class="col">
+		<p class="font-size-lg"> {{ doc.airplane }}</p>
+		<p class="text-muted">{{ doc.source_airport_code }}->{{doc.destination_airport_code}}</p>
+		<p class="text-muted">{{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }} | {{ doc.time_of_departure }} | {{frappe.utils.format_duration(doc.duration)}}</p>
+		<p><a class="font-size-lg" href="{{ doc.route }}">View Flight</a></p>
+	</div>
+</div>
+	
